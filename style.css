@@ -30,6 +30,10 @@ header {
   margin-top: 2em;
   font-size: 18px;
 }
+/* header * {
+  background-color: #000;
+  color: #6b6b6b;
+} */
 select {
   all: unset;
   background-color: #fff;
@@ -37,6 +41,10 @@ select {
   padding: 6px 20px;
   border-radius: 5px;
   font-size: 15px;
+}
+select * {
+  background-color: #000;
+  color: #6b6b6b;
 }
 option {
   padding: 2em;

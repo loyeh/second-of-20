@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="main">
+    <header>
+      <form action="">
+        <label for="movies">Pick a movie: </label>
+        <select name="movies" id="movies" onchange="priceUpdate()">
+          <option value="avengers" data-price="10">Avengers: Endgame ($10)</option>
+          <option value="joker" data-price="12">Joker ($12)</option>
+          <option value="toy" data-price="8">Toy Story 4 ($8)</option>
+          <option value="lion" data-price="9">The Lion King ($9)</option>
+        </select>
+      </form>
+    </header>
+
+    <div class="info">
+      <div class="infoItem">
+        <div class="icon na"></div>
+        <span>N/A</span>
+      </div>
+      <div class="infoItem">
+        <div class="icon selected"></div>
+        <span>Selected</span>
+      </div>
+      <div class="infoItem">
+        <div class="icon occupied"></div>
+        <span>Occupied</span>
+      </div>
+    </div>
+
+    <div class="cinema_screen"></div>
+
+    <div class="cinema" id="cinema" onclick="selectSeat(event)">
+      <div class="left_seats">
+
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+      </div>
+      <div class="middle_seats">
+
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats occupied"></div>
+      </div>
+      <div class="right_seats">
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats"></div>
+        <div class="icon cinema_seats occupied"></div>
+        <div class="icon cinema_seats"></div>
+      </div>
+    </div>
+    <div class="footer" id="footer"></div>
+  </div>
+</body>
+<script src="script1.js"></script>
+
+</html>
