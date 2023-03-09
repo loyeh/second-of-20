@@ -52,6 +52,7 @@ function loadSeatsInfo() {
 
 //set seats info from localstorage
 function storeSeatsInfo() {
+  localStorage.clear();
   localStorage.setItem("seats", JSON.stringify(selectedSeats));
 }
 
