@@ -2,6 +2,8 @@ const footer = document.getElementById("footer");
 const movieList = document.getElementById("movies").options;
 const movies = [...document.getElementById("movies").options];
 const seats = [...document.getElementsByClassName("cinema_seats")];
+const numberOfSeats = document.getElementById("number_of_seats");
+const ticketPrice = document.getElementById("ticket_price");
 const nLeftSeats = 12;
 const nRightSeats = 12;
 const nMidSeats = 24;
@@ -78,7 +80,8 @@ function priceUpdate() {
   let index = movieList.selectedIndex;
   price = movieList[index].dataset.price * seats;
   console.log(price);
-  footer.innerHTML = `<p>You have selected <span>${seats}</span> for a price of <span>$${price}</span></p>`;
+  ticketPrice.innerText = `$${price}`;
+  numberOfSeats.innerText = seats;
 }
 
 init();
