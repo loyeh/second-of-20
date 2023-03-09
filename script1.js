@@ -5,8 +5,8 @@ const seats = [...document.getElementsByClassName("cinema_seats")];
 const numberOfSeats = document.getElementById("number_of_seats");
 const ticketPrice = document.getElementById("ticket_price");
 const nLeftSeats = 12;
-const nRightSeats = 12;
 const nMidSeats = 24;
+const nRightSeats = 12;
 let selectedSeats = [];
 let price = 0;
 let number_of_seats = 0;
@@ -47,8 +47,10 @@ function assignSeatClass(seatsIndex, className) {
 
 //get seats info from localstorage and apply it
 function loadSeatsInfo() {
-  if (localStorage.getItem("selectedSeats")) {
-    selectedSeats = [...JSON.parse(localStorage.getItem("selectedSeats"))];
+  const selectedData = localStorage.getItem("selectedSeats");
+
+  if (selectedData) {
+    selectedSeats = [...JSON.parse(selectedData)];
   } else {
     selectedSeats = [];
   }
@@ -57,6 +59,11 @@ function loadSeatsInfo() {
   } else {
     occupiedSeats = ["seat17", "seat18", "seat29", "seat41", "seat30", "seat34", "seat35", "seat46", "seat40"];
   }
+  if (localStorage.movieIndex) {
+    movieList.selectedIndex = localStorage.movieIndex;
+  } else {
+    movieList.selectedIndex = 0;
+  }
   // console.log(JSON.parse(localStorage.getItem("occupiedSeats")));
 }
 
@@ -64,7 +71,7 @@ function loadSeatsInfo() {
 function storeSeatsInfo() {
   localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
   localStorage.setItem("occupiedSeats", JSON.stringify(["seat17", "seat18", "seat29", "seat41", "seat30", "seat34", "seat35", "seat46", "seat40"]));
-  localStorage.setItem("movieIndex", JSON.stringify(movieList.selectedIndex));
+  localStorage.movieIndex = movieList.selectedIndex;
 }
 
 //a function to show which seats have been selected and change its background color, and show us the information about that
