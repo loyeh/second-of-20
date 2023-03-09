@@ -12,7 +12,7 @@ body {
   justify-content: center;
   color: #fff;
   background-color: #222;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .main {
   display: flex;
@@ -30,6 +30,9 @@ header {
   margin-top: 2em;
   font-size: 18px;
 }
+label {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 /* header * {
   background-color: #000;
   color: #6b6b6b;
@@ -40,19 +43,19 @@ select {
   color: #6b6b6b;
   padding: 6px 20px;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 16px;
 }
 select * {
   background-color: #000;
   color: #6b6b6b;
 }
 option {
-  padding: 2em;
+  margin: 2em;
 }
 .info {
   display: flex;
   flex-direction: row;
-  color: #aaa;
+  color: #aaaa;
   margin-block: 2em;
   justify-content: space-evenly;
   background-color: #000;
@@ -69,7 +72,7 @@ option {
   height: 12px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  background-color: #9a989896;
+  background-color: #aaaaee22;
 }
 .icon + span {
   display: inline-block;
@@ -80,7 +83,7 @@ option {
 }
 
 .na {
-  background-color: #e7e5e56b;
+  background-color: #aaaaee44;
 }
 .selected {
   background-color: aqua;
@@ -102,7 +105,7 @@ option {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 270px;
+  width: 290px;
 }
 .left_seats,
 .right_seats {
@@ -115,6 +118,7 @@ option {
 }
 .footer {
   margin-block: 2em;
+  font-size: 20px;
   color: #fff;
 }
 .footer span {

@@ -10,6 +10,7 @@ const nMidSeats = 24;
 let selectedSeats = [];
 let price = 0;
 let number_of_seats = 0;
+const occupiedSeats = ["seat17", "seat18", "seat29", "seat41", "seat30", "seat34", "seat35", "seat46", "seat40"];
 
 window.addEventListener("beforeunload", storeSeatsInfo);
 
@@ -31,7 +32,6 @@ function init() {
   counter = initSection("left_seats", nLeftSeats, counter);
   counter = initSection("middle_seats", nMidSeats, counter);
   counter = initSection("right_seats", nRightSeats, counter);
-  const occupiedSeats = ["seat18", "seat17"];
   loadSeatsInfo();
   assignSeatClass(occupiedSeats, "occupied");
   assignSeatClass(selectedSeats, "selected");
