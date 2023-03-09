@@ -13,7 +13,6 @@ let number_of_seats = 0;
 let occupiedSeats = [];
 
 window.addEventListener("beforeunload", storeSeatsInfo);
-loadSeatsInfo();
 
 //make grid for each cinema section(left, middle, right)
 function initSection(sectionId, sectionLength, counter) {
@@ -48,8 +47,16 @@ function assignSeatClass(seatsIndex, className) {
 
 //get seats info from localstorage and apply it
 function loadSeatsInfo() {
-  [...selectedSeats] = [...JSON.parse(localStorage.getItem("selectedSeats"))];
-  [...occupiedSeats] = [...JSON.parse(localStorage.getItem("occupiedSeats"))];
+  if (localStorage.getItem("selectedSeats")) {
+    selectedSeats = [...JSON.parse(localStorage.getItem("selectedSeats"))];
+  } else {
+    selectedSeats = [];
+  }
+  if (localStorage.getItem("occupiedSeats")) {
+    occupiedSeats = [...JSON.parse(localStorage.getItem("occupiedSeats"))];
+  } else {
+    occupiedSeats = ["seat17", "seat18", "seat29", "seat41", "seat30", "seat34", "seat35", "seat46", "seat40"];
+  }
   // console.log(JSON.parse(localStorage.getItem("occupiedSeats")));
 }
 
@@ -57,6 +64,7 @@ function loadSeatsInfo() {
 function storeSeatsInfo() {
   localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
   localStorage.setItem("occupiedSeats", JSON.stringify(["seat17", "seat18", "seat29", "seat41", "seat30", "seat34", "seat35", "seat46", "seat40"]));
+  localStorage.setItem("movieIndex", JSON.stringify(movieList.selectedIndex));
 }
 
 //a function to show which seats have been selected and change its background color, and show us the information about that
