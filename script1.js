@@ -13,6 +13,7 @@ let number_of_seats = 0;
 let occupiedSeats = [];
 
 window.addEventListener("beforeunload", storeSeatsInfo);
+loadSeatsInfo();
 
 //make grid for each cinema section(left, middle, right)
 function initSection(sectionId, sectionLength, counter) {
