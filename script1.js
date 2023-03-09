@@ -10,7 +10,7 @@ const nMidSeats = 24;
 let selectedSeats = [];
 let price = 0;
 let number_of_seats = 0;
-const occupiedSeats = ["seat17", "seat18", "seat29", "seat41", "seat30", "seat34", "seat35", "seat46", "seat40"];
+let occupiedSeats = [];
 
 window.addEventListener("beforeunload", storeSeatsInfo);
 
@@ -47,13 +47,15 @@ function assignSeatClass(seatsIndex, className) {
 
 //get seats info from localstorage and apply it
 function loadSeatsInfo() {
-  [...selectedSeats] = [...JSON.parse(localStorage.getItem("seats"))];
+  [...selectedSeats] = [...JSON.parse(localStorage.getItem("selectedSeats"))];
+  [...occupiedSeats] = [...JSON.parse(localStorage.getItem("occupiedSeats"))];
+  // console.log(JSON.parse(localStorage.getItem("occupiedSeats")));
 }
 
 //set seats info from localstorage
 function storeSeatsInfo() {
-  localStorage.clear();
-  localStorage.setItem("seats", JSON.stringify(selectedSeats));
+  localStorage.setItem("selectedSeats", JSON.stringify(selectedSeats));
+  localStorage.setItem("occupiedSeats", JSON.stringify(["seat17", "seat18", "seat29", "seat41", "seat30", "seat34", "seat35", "seat46", "seat40"]));
 }
 
 //a function to show which seats have been selected and change its background color, and show us the information about that
