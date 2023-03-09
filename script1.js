@@ -98,7 +98,7 @@ function priceUpdate() {
   const seats = document.getElementsByClassName("selected").length - 1;
   let index = movieList.selectedIndex;
   price = movieList[index].dataset.price * seats;
-  console.log(price);
+  // console.log(price);
   ticketPrice.innerText = `$${price}`;
   numberOfSeats.innerText = seats;
 }
